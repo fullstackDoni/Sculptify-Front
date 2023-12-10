@@ -2,18 +2,28 @@
   <div class="row">
     <div class="col-md-12">
       <div class="justify-content:center">
-        <form>
+        <form (ngSubmit)="save()">
           <div class="mb-4">
             <label class="form-label">Почта</label>
-            <input type="email" class="form-control" placeholder="Введите Почту">
+            <input type="email" class="form-control" placeholder="Введите Почту" [(ngModel)]="email" name="email">
           </div>
           <div class="mb-3">
             <label class="form-label">Пароль</label>
-            <input type="email" class="form-control" placeholder="Введите Пароль">
+            <input type="password" class="form-control" placeholder="Введите Пароль" [(ngModel)]="password"
+                   name="password">
           </div>
           <div class="mb-4">
             <label class="form-label">Полный Имя</label>
-            <input type="text" class="form-control" placeholder="Введите Полный Имя">
+            <input type="text" class="form-control" placeholder="Введите Полный Имя" [(ngModel)]="fullName"
+                   name="fullName">
+          </div>
+          <div class="mb-4">
+            <label class="form-label">Номер</label>
+            <input type="text" class="form-control" placeholder="Введите Номер" [(ngModel)]="phone" name="phone">
+          </div>
+          <div class="mb-4">
+            <label class="form-label">Фотография</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control" name="photo">
           </div>
           <div class="mb-3">
             <button class="btn btn-success" type="submit">+</button>
@@ -22,3 +32,5 @@
       </div>
     </div>
   </div>
+</div>
+
